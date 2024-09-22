@@ -1,2 +1,2 @@
 export * from "./cars"
-// export * from "./category"
+export * from "./category"
