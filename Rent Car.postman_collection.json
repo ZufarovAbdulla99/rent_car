@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "2530ef0c-f8d2-4fdd-b3b7-a344e27e720c",
+		"name": "Rent Car",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37052609"
+	},
+	"item": [
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/car/ZTY4567",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"car",
+								"ZTY4567"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/car",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_Url}}/car/add",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"car",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Yaxshi mashina\",\r\n    \"color\": \"Oq\",\r\n    \"brand\": \"Matiz\",\r\n    \"model\": \"best\",\r\n    \"purchase_date\": \"2008-10-12\",\r\n    \"category_id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_Url}}/car/update/UZB125",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"car",
+								"update",
+								"UZB125"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/car/delete/UZB125",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"car",
+								"delete",
+								"UZB125"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/car/delete",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"car",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/category/1",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"category",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/category",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Compact\",\r\n    \"description\": \"Sedan-type car with 5 doors\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_Url}}/category/add",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"category",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SUV\",\r\n    \"description\": \"A mix between a sedan and a Jeep, medium-to-tall height, suitable for both city and off-road conditions\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_Url}}/category/update/1",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"category",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/category/delete/1",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"category",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_Url}}/category/delete",
+							"host": [
+								"{{Base_Url}}"
+							],
+							"path": [
+								"category",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base_Url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
