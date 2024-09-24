@@ -1,6 +1,6 @@
 import { Module } from "@nestjs/common";
 import { CategoryService } from "./category.service";
-import { PgService } from "src/postgres/pg.service";
+import { PgService } from "@postgres";
 import { CategoryController } from "./category.controller";
 
 @Module({

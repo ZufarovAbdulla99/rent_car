@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common";
-import { PgService } from "src/postgres/pg.service";
+import { PgService } from "@postgres";
 import { CarService } from "./car.service";
 import { CarController } from "./car.controller";
 

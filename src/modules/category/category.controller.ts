@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
 import { CategoryService } from "./category.service";
 import { createCategoryDto, updateCategoryDto } from "./dtos";
 
@@ -8,8 +8,8 @@ export class CategoryController {
     constructor(private readonly categoryService: CategoryService){}
 
     @Get("/")
-    async getAllCategories(): Promise<any[]> {
-        return await this.categoryService.getAllCategories()
+    async getAllCategories(@Query() queries: Record<string, string>): Promise<any[]> {
+        return await this.categoryService.getAllCategories(queries)
     }
 
     @Get("/:categoryId")

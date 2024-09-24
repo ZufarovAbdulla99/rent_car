@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from "@nestjs/common";
 import { CarService } from "./car.service";
 import { createCarDto, updateCarDto } from "./dtos";
 
@@ -7,8 +7,8 @@ export class CarController {
     constructor(private readonly carService: CarService){}
 
     @Get("/")
-    async getAllCars(): Promise<any[]> {
-        return await this.carService.getAllCars()
+    async getAllCars(@Query() queries: Record<string, string>): Promise<any[]> {
+        return await this.carService.getAllCars(queries)
     }
 
     @Get("/:carId")

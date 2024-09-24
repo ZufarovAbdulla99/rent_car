@@ -26,14 +26,27 @@ export class ApiFeature {
     };
   }
 
-  paginate(page: number = 1, limit: number = 10) {
+  paginate(page: number, limit: number) {
     this.#_filterOptions.limit = limit;
     this.#_filterOptions.page = page;
 
     return this;
   }
 
-  filter() {}
+  filter(queries: Record<string, any>) {
+    // // !!! Chala joyi bor
+
+    const allQuery = {...queries}
+    const excludedFields = ["limit", "page", "sort", "fields"]
+
+    excludedFields.forEach((exf) => {
+      delete allQuery[exf]
+    })
+
+    console.log(allQuery)
+
+    return this
+  }
 
   limitFields(selectedFields: string[]) {
     this.#_filterOptions.fields = selectedFields;
@@ -41,7 +54,14 @@ export class ApiFeature {
     return this;
   }
 
-  sort(sortField: string, sortOrder: SortOrderType = 'ASC') {
+  sort(sortField: string = this.#_filterOptions.sort) {
+    let sortOrder: SortOrderType = 'ASC'
+
+    if(sortField.at(0) == "-"){
+      sortField = sortField.slice(1, sortField.length)
+      sortOrder = "DESC"
+    }
+
     this.#_filterOptions.sort = sortField;
     this.#_filterOptions.sortOrder = sortOrder;
 
@@ -69,10 +89,7 @@ export class ApiFeature {
       }
     });
 
-    this.#_queryString = `SELECT ${selectedFields} FROM ${this.#_filterOptions.table} ${filterQuery}
-    ORDER BY ${this.#_filterOptions.sort} ${this.#_filterOptions.sortOrder}
-    LIMIT ${this.#_filterOptions.limit} 
-    OFFSET ${offset};`;
+    this.#_queryString = `SELECT ${selectedFields} FROM ${this.#_filterOptions.table} ${filterQuery} ORDER BY ${this.#_filterOptions.sort} ${this.#_filterOptions.sortOrder} LIMIT ${this.#_filterOptions.limit} OFFSET ${offset};`;
 
     return {
       queryString: this.#_queryString,

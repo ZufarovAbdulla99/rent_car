@@ -1,1 +1,1 @@
-export * from "./apit-feature.util"
+export * from "./api-feature.utils"

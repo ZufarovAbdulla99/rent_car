@@ -1,10 +1,16 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000, () => {
-    console.log(`listening on port ${3000}...`)
-  });
+  const config = app.get(ConfigService);
+  await app.listen(
+    config.get<number>('PORT'),
+    config.get<string>('HOST'),
+    (): void => {
+      console.log(`listening on port ${config.get<number>('PORT')}...`);
+    },
+  );
 }
 bootstrap();
