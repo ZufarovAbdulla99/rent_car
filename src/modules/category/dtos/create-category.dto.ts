@@ -1,4 +1,11 @@
-export declare interface createCategoryDto {
+import { IsNotEmpty, IsString } from "class-validator";
+
+export declare class createCategoryDto {
+    @IsNotEmpty()
+    @IsString()
     name: string;
-    description: string;
+
+    @IsNotEmpty()
+    @IsString()
+    description: string
 }

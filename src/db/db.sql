@@ -9,7 +9,7 @@ CREATE TABLE category(
 );
 
 CREATE TABLE car(
-    VIN VARCHAR(17) PRIMARY KEY NOT NULL,
+    VIN VARCHAR(7) PRIMARY KEY NOT NULL,
     description VARCHAR(255),
     color VARCHAR(50),
     brand VARCHAR(50),

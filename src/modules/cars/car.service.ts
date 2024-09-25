@@ -17,7 +17,7 @@ export class CarService {
     .limitFields(queries?.fields ? queries.fields.split(",") : ['*'])
     .sort(queries?.sort || 'vin')
     .getQuery()
-    console.log(query)
+    // console.log(query)
     const data = await this.postgres.fetchData(query.queryString);
     return {
       limit: query.limit,
