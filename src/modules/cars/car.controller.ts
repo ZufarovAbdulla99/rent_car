@@ -1,8 +1,11 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseInterceptors, UsePipes, ValidationPipe } from "@nestjs/common";
 import { CarService } from "./car.service";
 import { createCarDto, updateCarDto } from "./dtos";
+import { LoggingInterceptor } from "src/interceptors/logging-interceptor";
+import { Roles } from "@decorators"
 
 @Controller("/car")
+@UseInterceptors(LoggingInterceptor)
 export class CarController {
     constructor(private readonly carService: CarService){}
 
@@ -16,6 +19,7 @@ export class CarController {
         return await this.carService.getCar(carId)
     }
 
+    @Roles(["admin"])
     @Post("/add")
     async createCar(@Body() createCarData: createCarDto): Promise<any> {
         return await this.carService.createCar(createCarData)

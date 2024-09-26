@@ -14,7 +14,13 @@
       "@postgres": ["./src/postgres"],
       "@modules": ["./src/modules"],
       "@utils": ["./src/utils"],
-      "@config": ["./src/config"]
+      "@config": ["./src/config"],
+      "@middlewares": ["./src/middlewares"],
+      "@filters": ["./src/filters"],
+      "@pipes": ["./src/pipes"],
+      "@interceptors": ["./src/interceptor"],
+      "@guards": ["./src/guards"],
+      "@decorators": ["./src/decorators"]
     },
     "incremental": true,
     "skipLibCheck": true,

@@ -1,4 +1,4 @@
-import { IsAlpha, IsAlphanumeric, IsNotEmpty, IsNumber, IsString, Length, Min, MinLength } from "class-validator";
+import { IsAlpha, IsAlphanumeric, IsInt, IsNotEmpty, IsNumber, IsString, Length, Min, MinLength } from "class-validator";
 
 export declare class createCarDto {
     @IsNotEmpty()
